@@ -25,12 +25,16 @@ print("Waiting for a client to connect")
 clientSocket, clientAddress = serverSocket.accept()
 
 
-# Infinte loop that waits for the user to type a message, then transmits it.
-while True:
-  message = raw_input("Enter the next message to send: ")
+# Once we have a connected receiver, begin broadcasting
+print("Begin typing messages for broadcast.")
+print("Type '/exit' to end the program.")
+message = ""
+
+# Main loop that listens for messages
+while message != "/exit":
+  message = raw_input("message> ")
   clientSocket.send(message)
   
-# Ideally we should always close our sockets, but currently this program won't
-# because it can only be quit by using ctrl + C.
+# Close the sockets before exiting
 clientSocket.close()
 serverSocket.close()
