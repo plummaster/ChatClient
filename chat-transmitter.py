@@ -11,7 +11,7 @@ host = 'localhost' # localhost just means "this computer"
 port = 54321       # port can be pretty much any number. This one is easy to remember.
 
 # Create a server socket to accept incoming connections from clients.
-# AF_INET meant address format is IPv4
+# AF_INET means address format is IPv4
 # SOCK_STREAM specifies what kind of socket it is. This one is common.
 serverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
