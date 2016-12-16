@@ -32,9 +32,9 @@ message = ""
 
 # Main loop that listens for messages
 while message != "/exit":
-  message = raw_input("message> ")
-  clientSocket.send(message)
-  
+	message = raw_input("message> ")
+	clientSocket.send(message)
+	
 # Close the sockets before exiting
 clientSocket.close()
 serverSocket.close()
